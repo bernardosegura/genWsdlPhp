@@ -1,0 +1,133 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background: linear-gradient(135deg,#0143a3,#0273d4)">
+  <a class="navbar-brand" href="#"><img src="src/logo.png" width="32" height="32" /> Generador de Wsdl en PHP v1.2 beta</a>
+</nav>
+<main role="main" class="container" style="position: relative; top: 80px;">
+      <div class="row">
+         <div class="col-md-8 order-md-1">
+           <h4 class="mb-3">Generador de Código PHP</h4>
+           <div class="mb-3">
+              <label for="wsdlName">Nombre del Servicio</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">wsdl</span>
+                </div>
+                <input type="text" class="form-control" id="wsdlName" placeholder="ejemplo: miservicio" required="" [(ngModel)]="nombreWs" >
+                <div class="invalid-feedback" style="width: 100%;">
+                  El nombre del servicio es requerido.
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="libPath">Ruta de Libreria NUSOAP</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">lib</span>
+                </div>
+                <input type="text" class="form-control" id="libPath" placeholder="ejemplo: lib/nusoap.php" value="../lib/nusoap.php" required="" [(ngModel)]="lib">
+                <div class="invalid-feedback" style="width: 100%;">
+                  La librería es requerida.
+                </div>
+              </div>
+            </div>
+         </div>
+      </div>
+      <div class="row jumbotron">
+          <div class="row" style="position: relative; top: -25px;">
+            <h4>Método</h4>  
+          </div>
+          <div class="row" style="width: 100%">
+            <div class="col-md-6 mb-3">
+              <label for="metodoName">Nombre</label>           
+              <input type="text" class="form-control" id="metodoName" placeholder="ejemplo: consultarDatos" required="" [(ngModel)]="nombreMetodo">  
+              <div class="invalid-feedback">
+                Nombre del método requerido.
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="metodoDesc">Descripción</label>
+              <input type="text" class="form-control" id="metodoDesc" placeholder="" value="" [(ngModel)]="descMetodo">
+            </div>
+          </div>
+          <div class="row" style="width: 100%">
+                 <div class="col-md-12 mb-3">
+                    <label for="metodosEstructura">Estructura Json Entradas</label>           
+                    <!--textarea class="form-control" id="metodoName" placeholder='ejemplo: {"resgistro":{"tipo":"int"}}' style="height: 300px; resize: none;" [(ngModel)]="entrada"></textarea-->
+                    <json-editor [options]="optionsE" [data]="entrada" #editentra style="width: 100%"></json-editor>
+                  </div>
+          </div>
+          <div class="row" style="width: 100%">
+                 <div class="col-md-12 mb-3">
+                    <label for="metodosEstructura">Estructura Json Salidas</label>           
+                    <!--textarea class="form-control" id="metodoName" placeholder='ejemplo: {"respuesta":{"tipo":"string"}}' style="height: 300px; resize: none;" [(ngModel)]="salida"></textarea-->
+                     <json-editor [options]="optionsS" [data]="salida" #editSal style="width: 100%"></json-editor>
+                  </div>
+          </div>
+          <div class="row" style="width: 100%">
+                 <div class="col-md-12 mb-3">
+                    <label for="metodosEstructura">Código de método en PHP</label>           
+                    <textarea class="form-control" id="metodoName" placeholder='ejemplo: $c = $a + $b;
+                    return $c;' style="height: 300px; resize: none;" [(ngModel)]="code"></textarea>
+                  </div>
+          </div>
+             <!--form class="needs-validation" novalidate="" style="width: 100%">
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="metodoName">Nombre</label>           
+                    <input type="text" class="form-control" id="metodoName" placeholder="ejemplo: consultarDatos" required="">  
+                    <div class="invalid-feedback">
+                      Nombre del metodo requedido.
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="metodoDesc">Descripción</label>
+                    <input type="text" class="form-control" id="metodoDesc" placeholder="" value="">
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="varEnt">Parametros de Entrada</label>
+                  <div class="input-group">
+                    <input type="text" class="form-control" id="varEnt" placeholder="variable de Entrada" >
+                    <select>
+                      <option>int</option>
+                      <option>float</option>
+                      <option>string</option>
+                      <option>struct</option>
+                      <option>array</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <button class="btn btn-sm btn-primary btn-block col-md-2">Agregar Parametro Entrada</button>
+                </div>
+                <div class="mb-3">
+                  <label for="varSal">Parametros de Salida</label>
+                  <div class="input-group">
+                    <input type="text" class="form-control" id="varSal" placeholder="variable de Salida" >
+                    <select>
+                      <option>int</option>
+                      <option>float</option>
+                      <option>string</option>
+                      <option>struct</option>
+                      <option>array</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <button class="btn btn-sm btn-primary btn-block col-md-2">Agregar Parametro Salida</button>
+                </div>
+                <hr class="mb-4">
+                <button class="btn btn-sm btn-primary btn-block col-md-2">Agregar Metodo</button>
+              </form-->
+          </div>
+          <hr class="mb-4">
+          <div class="row d-flex">
+              <button class="btn btn-sm btn-primary btn-block col-md-2 ml-auto" (click)="generar()">Crear Código Servicio</button>    
+          </div>
+          <hr class="mb-4">
+          <div class="row d-flex">
+              Servicio Montado en {{servicio}}
+          </div>
+                    
+</main>
+
