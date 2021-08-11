@@ -1,6 +1,6 @@
 #
 # <img src=""/> Generador de Wsdl en PHP
-Proyecto **Angular** que genera **web servicie** en **PHP** de manera automática.
+Es una aplicación que utiliza [Angular CLI](https://github.com/angular/angular-cli), la cual genera **web servicie** en **PHP** de manera automática.
 
 Para poder generar un web Servicie se tiene que ingresar la siguiente información:
 - **Nombre del Servicio** es el nombre de nuestro servicio web.
@@ -21,3 +21,4 @@ Para poder generar un web Servicie se tiene que ingresar la siguiente informaci�
  
 ### Botón que genera el servicio y al final te indica la url del mismo para su consumo
  <img src=""/>
+
