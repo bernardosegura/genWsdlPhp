@@ -1,5 +1,5 @@
-#
-# <img src=""/> Generador de Wsdl en PHP
+# 
+# <img src="https://github.com/bernardosegura/genWsdlPhp/blob/master/img/logo.png?raw=true" width="100px" height="100px"/> Generador de Wsdl en PHP
 Es una aplicación que utiliza [Angular CLI](https://github.com/angular/angular-cli), la cual genera **web servicie** en **PHP** de manera automática.
 
 Para poder generar un web Servicie se tiene que ingresar la siguiente información:
@@ -14,11 +14,11 @@ Para poder generar un web Servicie se tiene que ingresar la siguiente informaci�
  
 # Interfaz de aplicación **Angular**
 ### Datos generales e inicio de datos de método
- <img src=""/>
+ <img src="https://github.com/bernardosegura/genWsdlPhp/blob/master/img/webp1.png?raw=true"/>
  
 ### Datos de estructura de servicio
- <img src=""/>
+ <img src="https://github.com/bernardosegura/genWsdlPhp/blob/master/img/webp2.png?raw=true"/>
  
 ### Botón que genera el servicio y al final te indica la url del mismo para su consumo
- <img src=""/>
+ <img src="https://github.com/bernardosegura/genWsdlPhp/blob/master/img/webp3.png?raw=true"/>
 
